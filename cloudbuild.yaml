@@ -1,10 +1,17 @@
 steps:
   - name: 'hashicorp/terraform:latest'
+    entrypoint: "sh"
     args:
-      - 'init'
+      - 'terraform init'
       
   - name: 'hashicorp/terraform:latest'
+    entrypoint: "sh"
     args:
-      - 'apply'
-      - '-auto-approve'
+      - 'terraform plan'
+
+  - name: 'hashicorp/terraform:latest'
+    entrypoint: "sh"
+    args:
+      - 'terraform apply'
+      - '--auto-approve'
 
