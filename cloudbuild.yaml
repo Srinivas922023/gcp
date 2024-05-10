@@ -5,7 +5,8 @@ steps:
     args:
       
       - |
-          cd source/terraform
+       if [ -d "environments/$BRANCH_NAME/" ]; then
+        cd environments/$BRANCH_NAME      
           terraform init
           terraform plan
           terraform apply -auto-approve
