@@ -2,7 +2,7 @@ steps:
   - name: 'hashicorp/terraform:latest'
     args:
       - 'init'
-      - '-backend-config=bucket=my-terraform-state-bucket'
+      
   - name: 'hashicorp/terraform:latest'
     args:
       - 'apply'
