@@ -1,14 +1,18 @@
 steps:
+# Step 1: Clone the GitHub repository
+- name: 'gcr.io/cloud-builders/git'
+  args: ['clone', 'https://github.com/Srinivas922023/gcp.git', 'source']
 
-  - name: 'hashicorp/terraform:latest'
-    entrypoint: 'sh'
-    args:
-      
-      - |
-       if [ -d "environments/$BRANCH_NAME/" ]; then
-        cd environments/$BRANCH_NAME      
-          terraform init
-          terraform plan
-          terraform apply -auto-approve
+
+# Step 2: Run Terraform commands
+- name: 'hashicorp/terraform:latest'
+  entrypoint: 'bash'
+  args:
+  - '-c'
+  - |
+    cd source/terraform  # Change directory to where your Terraform configuration files are located
+    terraform init       # Initialize Terraform (downloads necessary plugins/modules)
+    terraform plan       # Generate an execution plan (to see what Terraform will do)
+    terraform apply -auto-approve  # Apply the Terraform configuration (creates or updates infrastructure)
       
   
