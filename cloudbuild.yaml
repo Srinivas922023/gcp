@@ -1,18 +1,18 @@
 steps:
   - name: 'hashicorp/terraform:latest'
-    entrypoint: 'sh'
+    entrypoint: 'bash'
     args:
       - 'c'
       - 'terraform init'
       
   - name: 'hashicorp/terraform:latest'
-    entrypoint: 'sh'
+    entrypoint: 'bash'
     args:
       - 'c'
       - 'terraform plan'
 
   - name: 'hashicorp/terraform:latest'
-    entrypoint: 'sh'
+    entrypoint: 'bash'
     args:
       - 'c'
       - 'terraform apply'
