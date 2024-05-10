@@ -1,5 +1,5 @@
 resource "google_compute_instance" "default" {
-  name         = "galaxy"
+  name         = "galaxy-1"
   machine_type = "e2-medium"
   zone         = "us-central1-a"
 
@@ -9,7 +9,7 @@ resource "google_compute_instance" "default" {
       
     }
    }
-  
+  #testing purpose
     network_interface {
     network = "default"
 
