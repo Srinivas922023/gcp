@@ -1,5 +1,5 @@
 resource "google_compute_instance" "default" {
-  name         = "galaxy-1"
+  name         = "galaxy-2"
   machine_type = "e2-medium"
   zone         = "us-central1-a"
   project     = "imperial-ally-421005 "
