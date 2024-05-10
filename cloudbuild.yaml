@@ -3,18 +3,9 @@ steps:
     entrypoint: '/bin/sh'
     args:
       - 'c'
-      - 'terraform init'
+      - |
+          terraform init
+          terraform plan'
+          terraform apply -auto-approve
       
-  - name: 'hashicorp/terraform:latest'
-    entrypoint: '/bin/sh'
-    args:
-      - 'c'
-      - 'terraform plan'
-
-  - name: 'hashicorp/terraform:latest'
-    entrypoint: '/bin/sh'
-    args:
-      - 'c'
-      - 'terraform apply'
-      - '--auto-approve'
-
+  
