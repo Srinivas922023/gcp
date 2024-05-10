@@ -2,7 +2,7 @@ steps:
   - name: 'hashicorp/terraform:latest'
     entrypoint: '/bin/sh'
     args:
-      - 'c'
+      
       - |
           terraform init
           terraform plan'
