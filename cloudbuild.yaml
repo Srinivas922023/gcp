@@ -1,20 +1,17 @@
+---
 steps:
-# Step 1: Clone the GitHub repository
-- name: 'gcr.io/cloud-builders/git'
-  args: ['clone', 'https://github.com/Srinivas922023/gcp.git', 'source']
-
-
-# Step 2: Run Terraform commands
-- name: 'hashicorp/terraform:latest'
-  entrypoint: 'bash'
-  
-- name: "terraform init"
+  - name: gcr.io/cloud-builders/git
+    args:
+      - clone
+      - https://github.com/Srinivas922023/gcp.git
+      - source
+  - name: hashicorp/terraform:latest
+    entrypoint: bash
+  - name: terraform init
     run: terraform init
-
-- name: "terraform plan"
+  - name: terraform plan
     run: terraform plan
-
-- name: "terraform apply"
+  - name: terraform apply
     run: terraform apply -auto-approve
     
       
