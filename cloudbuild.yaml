@@ -7,12 +7,4 @@ steps:
       - source
   - name: hashicorp/terraform:latest
     entrypoint: bash
-  - name: terraform init
-   
-  - name: terraform plan
-    
-  - name: terraform apply -auto-approve
-    
-    
-      
   
