@@ -10,7 +10,7 @@ resource "google_compute_instance" "default" {
       
     }
    }
-  #testing purpose
+  #testing purpose tt
     network_interface {
     network = "default"
 
