@@ -1,3 +1,8 @@
+
+provider "google" {
+  project      = "imperial-ally-421005"
+  
+}
 resource "google_compute_instance" "default" {
 
   name         = "galaxy-2"
