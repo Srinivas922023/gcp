@@ -1,16 +1,15 @@
-    steps:
-  - name: gcr.io/cloud-builders/git
-    entrypoint: 'sh'
-    steps:
-  - id: 'terraform init'
-    name: 'hashicorp/terraform:1.0.0'
-    entrypoint: 'sh'
-    args: terraform init
-    
-  - id: 'terraform plan'
-    name: 'hashicorp/terraform:1.0.0'
-    
-  - id: 'terraform apply'
-    name: 'hashicorp/terraform:1.0.0'
-    script: terraform apply --auto-approve
+- id: 'tf apply'
+  name: 'hashicorp/terraform:1.0.0'
+  entrypoint: 'sh'
+  args: 
+  - '-c'
+  - | 
+      if [ -d "environments/$BRANCH_NAME/" ]; then
+        cd environments/$BRANCH_NAME      
+        terraform apply -auto-approve
+      else
+        echo "***************************** SKIPPING APPLYING *******************************"
+        echo "Branch '$BRANCH_NAME' does not represent an official environment."
+        echo "*******************************************************************************"
+      fi
   
