@@ -10,7 +10,7 @@ steps:
   args:
   - '-c'
   - |
-    cd gcp # Change directory to where your Terraform configuration files are located
+    cd gcp # Change directory to where your Terraform configuration files are located yes
     terraform init       # Initialize Terraform (downloads necessary plugins/modules)
     terraform plan       # Generate an execution plan (to see what Terraform will do)
     terraform apply -auto-approve  # Apply the Terraform configuration (creates or updates infrastructure)
