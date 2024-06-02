@@ -25,3 +25,11 @@ resource "google_compute_instance" "default" {
   }
 
  }
+
+resource "google_storage_bucket" "static" {
+ name          = "tat555"
+ location      = "US"
+ storage_class = "STANDARD"
+ force_destroy = true
+ uniform_bucket_level_access = true
+}
